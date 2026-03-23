@@ -1,0 +1,160 @@
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+
+    cursor: pointer;
+    margin-top: 47px;
+    margin-left: 42px;
+
+}
+
+.link-header {
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    color: #17233d;
+    text-align: center;
+    letter-spacing: 0, 875px;
+    margin-right: 32px;
+
+
+}
+
+.button-header {
+
+    background: #6FBF44;
+    border-radius: 6px;
+    width: 124px;
+    height: 51px;
+    border: none;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    color: #FFFFFF;
+
+
+}
+
+
+img {
+
+    margin: 163px 0 0 123px;
+    display: inline-block;
+
+
+}
+
+section {
+
+    display: inline-block;
+    margin-left: 85px;
+    width: 493px;
+}
+
+h1 {
+
+    font-weight: 700;
+    font-size: 62px;
+    line-height: 82px;
+    letter-spacing: 0.6px;
+    color: #161A49;
+
+}
+
+p {
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 33px;
+    letter-spacing: 0.5px;
+    color: #4B505A;
+    margin-top: 47px;
+    margin-bottom: 55px;
+
+
+}
+
+.button-more {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color: #6FBF44;
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        display: none;
+
+    }
+
+    section {
+        position: absolute;
+        width: 70%;
+        height: auto;
+        width: auto;
+        padding: 0;
+        margin: 124px 55px 616px 55px;
+        top: 1%;
+
+    }
+
+    img {
+
+        max-width: 90%;
+        margin: 490px 39px 22px 39px;
+        flex-direction: column-reverse;
+        width: auto;
+        height: auto;
+
+
+    }
+
+    h1 {
+        font-weight: 900;
+        font-size: 30px;
+        line-height: 30px;
+        letter-spacing: 0.6px;
+        text-align: center;
+        width: 278;
+        height: 60;
+        opacity: 1;
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 33px;
+        letter-spacing: 0.5px;
+        text-align: justify;
+        width: auto;
+        height: auto;
+        opacity: 1;
+    }
+
+    .button-more {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        opacity: 1px;
+        cursor: pointer;
+        border: none;
+        margin-left: 110px;
+        width: 112px;
+        height: 27px;
+        background: none;
+
+
+    }
+
+
+}
