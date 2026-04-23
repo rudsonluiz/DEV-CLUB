@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <title>Converter Money</title>
+    <title>Convert Money</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,19 +18,27 @@
 
     <main>
         <b>Converter</b> <b>de</b>
-        <select>
-            <option>Real brasileiro</option>
+        <select class="currency-select-convert">
+
+            <option value="Real"><b>R$ Real Brasileiro</b></option>
+            <option value="Dolar"><b>US$ Dólar Americano</b></option>
+            <option value="Euro"><b>€ Euro</b></option>
+            <option value="Libra"><b>£ Libra Esterlina</b></option>
+            <option value="Bitcoin"><b>₿ Bitcoin</b></option>
+            
         </select>
 
         <label>
             <b>Converter para</b>
             <select class="currency-select">
-               
-                    <option value="Dolar"><b>US$ Dólar Americano</b></option>
-                    <option value="Euro"><b>€ Euro</b></option>
-                    <option value="Libra"><b>£ Libra Esterlina</b></option>
-                    <option value="Bitcoin"><b>₿ Bitcoin</b></option>
-               
+
+                <option value="Dolar"><b>US$ Dólar Americano</b></option>
+                <option value="Euro"><b>€ Euro</b></option>
+                <option value="Libra"><b>£ Libra Esterlina</b></option>
+                <option value="Bitcoin"><b>₿ Bitcoin</b></option>
+                <option value="Real"><b>R$ Real Brasileiro</b></option>
+
+
             </select>
         </label>
 
