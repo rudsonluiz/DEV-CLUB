@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url('https://picsum.photos/1920/1080');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+}
+
+.restart-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 10px;
+    background-color: #054d0b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 30px;
+    margin: 20px 5px;
+}
+
+button {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 50px;
+    margin-top: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.6;
+}
+
+#rock {
+    background-color: #f44336;
+
+}
+
+#paper {
+    background-color: #4CAF50;
+
+}
+
+#scissors {
+    background-color: #2196F3;
+
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+p {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.may-score span {
+    font-size: 24px;
+    color: #2a078a;
+}
+
+
+.computer-score span {
+    font-size: 24px;
+    color: #a50512;
+}
+
+.rounds span {
+    font-size: 24px;
+    color: #706e09;
+}
