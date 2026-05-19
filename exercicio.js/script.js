@@ -1,5 +1,10 @@
-console. log("olá, agora estou por aqui");
 
-function cliqueinobotao() {
-    alert("Botão clicado!")
-}
+
+
+
+const firstNumber = 10
+const secondNumber = 20
+
+
+console.log(firstNumber >= secondNumber)
+
