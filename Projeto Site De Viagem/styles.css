@@ -100,15 +100,15 @@
       text-transform: uppercase;
       font-weight: 800;
       font-size: 12px bolder;
-      margin-top: 50px;
+      margin-top: 40px;
 
   }
 
   .hero-content h1 {
-      font-size: clamp(20px, 8vw, 30px);
+      font-size: bold clamp(18px, 8vw, 20px);
       line-height: 1.0;
       margin-bottom: 20px;
-      font-weight: 200;
+      font-weight: 700;
   }
 
   .hero-content h1 span {
@@ -117,9 +117,9 @@
 
   .hero-content .description {
       color: #d9d9d9;
-      font-size: 18px;
+      font-size: clamp(8px, 0.9vw, 10px);
       line-height: 1.8;
-      margin-bottom: 40px;
+      margin-bottom: 10px;
       font-weight: 100;
   }
 
@@ -136,14 +136,19 @@
   }
 
   .stats {
-      padding: 140px 8%;
+      padding: 80px 8%;
       background: #07141f;
+      position: center;
+      text-align: center;
+   
+
   }
 
   .stats-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 20px;
+
   }
 
   .stat-card {
@@ -153,6 +158,9 @@
       text-align: center;
       border: 1px solid rgba(255, 255, 255, 0.08);
       transition: .4s;
+      margin-top: -50px;
+      
+      
   }
 
   .stat-card:hover {
@@ -176,12 +184,15 @@
 
   .destinations {
       padding: 100px 8%;
-      margin-top: -80px;
+      max-height: 100%;
+      margin-top: -90px;
+
   }
 
   .section-title {
       text-align: center;
       margin-bottom: 70px;
+
   }
 
   .section-title p {
@@ -213,6 +224,7 @@
       overflow: hidden;
       border-radius: 35px;
       cursor: pointer;
+      margin-top: -40px;
 
 
   }
