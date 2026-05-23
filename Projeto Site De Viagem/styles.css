@@ -17,25 +17,25 @@
       width: 100%;
       top: 0;
       left: 0;
-      padding: 2px 1%;
+      padding: 18px 3%;
       box-sizing: border-box;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(12px);
-      z-index: 1000;
+      z-index: 1200;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .logo {
-      font-size: 25px bolder;
+  .logo-viagem {
+      font-size: 40px, bolder;
       font-weight: 700;
       color: white;
-      margin: 0, 20px, 0 0 0px;
+      margin: 0, 20px, ;
   }
 
-  .logo span {
+  .logo-viagem span {
       color: #00d9ff;
   }
 
@@ -61,7 +61,7 @@
   .btn-reserva {
       padding: 08px 18px;
       border-radius: 40px;
-      font-size: 9px;
+      font-size: 19px;
       border: none;
       background: linear-gradient(45deg, #00d9ff, #0066ff);
       color: white;
@@ -84,6 +84,8 @@
       background-position: center;
       background-size: cover;
       display: flex;
+      position: center;
+      align-items: center;
       padding-left: 50px;
       padding-right: 40%;
       text-align: left;
@@ -99,8 +101,8 @@
       margin-bottom: 5px;
       text-transform: uppercase;
       font-weight: 800;
-      font-size: 12px bolder;
-      margin-top: 40px;
+      font-size: 18px bolder;
+      margin-top: 50px;
 
   }
 
@@ -117,7 +119,7 @@
 
   .hero-content .description {
       color: #d9d9d9;
-      font-size: clamp(8px, 0.9vw, 10px);
+      font-size: clamp(16px, 0.9vw, 10px);
       line-height: 1.8;
       margin-bottom: 10px;
       font-weight: 100;
@@ -127,6 +129,7 @@
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
+      font-size: 29px;
 
   }
 
@@ -140,7 +143,7 @@
       background: #07141f;
       position: center;
       text-align: center;
-   
+
 
   }
 
@@ -159,8 +162,8 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       transition: .4s;
       margin-top: -50px;
-      
-      
+
+
   }
 
   .stat-card:hover {
@@ -199,8 +202,8 @@
       color: #00d9ff;
       text-transform: uppercase;
       letter-spacing: 5px;
-      margin-bottom: 0px;
-      font-size: 10px;
+      margin-top: 15px;
+      font-size: 16px;
   }
 
   .section-title h2 {
@@ -211,16 +214,16 @@
   }
 
   .destination-grid {
-
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-      gap: 15px;
+      grid-template-columns: 500px 500px 500px;      
+      justify-content: center;
+      gap: 30px;
       margin-top: 0;
   }
 
   .destination-card {
       position: relative;
-      height: 200px;
+      height: 400px;
       overflow: hidden;
       border-radius: 35px;
       cursor: pointer;
@@ -263,7 +266,7 @@
       color: #ffffff;
       line-height: 1.1;
       margin-bottom: 0px;
-      font-size: 10px;
+      font-size: 16px bolder;
       position: relative;
       left: -20px;
   }
@@ -316,11 +319,12 @@
   }
 
   .about-content h2 {
-      font-size: clamp(8px, 0.8vw, 9px);
+      font-size: clamp(16px, 0.8vw, 19px);
       margin-bottom: 0px;
       line-height: 1.2;
       color: #fff;
       font-weight: 700;
+      margin: 3px 0px 20px;
 
   }
 
@@ -332,14 +336,14 @@
       color: #d5d5d5;
       line-height: 1.4;
       margin-bottom: 0;
-      font-size: clamp(10px, 0.9vw, 11px);
+      font-size: clamp(16px, 0.9vw, 19px);
       font-weight: 400;
   }
 
   .btn-Agencia {
       padding: 8px 18px;
       border-radius: 40px;
-      font-size: 9px;
+      font-size: 15px;
       border: none;
       background: linear-gradient(45deg, #00d9ff, #0066ff);
       color: white;
@@ -347,7 +351,13 @@
       cursor: pointer;
       transition: .4s;
       box-shadow: 0 10px 30px rgba(0, 217, 255, .4);
-      margin-top: 5px;
+      margin-top: 30px;
+
+  }
+
+  .btn-Agencia:hover {
+      transform: scale(1.1);
+      opacity: 0.7;
   }
 
 
