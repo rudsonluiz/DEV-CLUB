@@ -1,37 +1,106 @@
-/* calculando desconto:
-todos os produtos acima de R$ 30,00 tem desconto  de 10%*/
+const list = document.querySelector("ul")
+const buttons = document.querySelectorAll("button")
 
 
-const cart = [10, 244, 99, 2, 20, 33, 250]
-let finalValuewithdiscount = 0
-let originalValue = 0
-let totalDiscount = 0
+// NÃO MOSTRA NADA AO INICIAR
+list.innerHTML = ""
 
-function calculateDiscount(price, discount) {
-    const result = (price * discount) / 100
-    return result
+
+// FUNÇÃO PARA MOSTRAR PRODUTOS
+function showProducts(arrayProducts) {
+
+    let myLi = ""
+
+    arrayProducts.forEach((product) => {
+
+        myLi += `
+            <li>
+                <img src="${product.src}">
+                <p>${product.name}</p>
+                <p class="price">R$ ${product.price.toFixed(2)}</p>
+                <p class="${product.vegan ? 'vegan' : 'not-vegan'}">
+                    ${product.vegan ? '🌱 Vegano' : '🍔 Tradicional'}
+                </p>
+            </li>
+        `
+    })
+
+    list.innerHTML = myLi
 }
 
 
-cart.forEach((Value => {
-    originalValue += Value
+// BOTÃO 1 → MOSTRAR PRODUTOS
+buttons[0].addEventListener("click", () => {
+    showProducts(menuOptions)
+})
 
-    if (Value > 30) {
-        const discount = calculateDiscount(Value, 10)
 
-        finalValuewithdiscount += (Value - discount)
+// BOTÃO 2 → DESCONTOS
+buttons[1].addEventListener("click", () => {
 
-        totalDiscount += discount
+    const discounts = menuOptions.map((product) => ({
+        ...product,
+        price: product.price * 0.9
+    }))
 
-    } else {
+    showProducts(discounts)
+})
 
-        finalValuewithdiscount += Value
-    }
 
-}))
+// BOTÃO 3 → SOMAR TOTAL
+buttons[2].addEventListener("click", () => {
 
-console.log(`
-O valor final da compra e de R$ ${originalValue.toFixed(2)},
-você economizou ${totalDiscount.toFixed(2)}
-porém você teve um desconto, irá pagar apenas R$ ${finalValuewithdiscount.toFixed(2)}
-`)
+    const total = menuOptions.reduce((acc, product) => {
+        return acc + product.price
+    }, 0)
+
+    list.innerHTML = `
+        <li class="total-card">
+            <h2>Total dos Produtos</h2>
+            <p class="price">R$ ${total.toFixed(2)}</p>
+        </li>
+    `
+})
+
+function buscarPorCategoria(categoriaDesejada) {
+    return menuOptions.filter(item =>
+        item.category.toLowerCase() === categoriaDesejada.toLowerCase()
+    );
+}
+
+// BOTÃO 4 → VEGANOS
+buttons[3].addEventListener("click", () => {
+
+    const apenasVeganos = buscarPorCategoria('Vegano');
+    showProducts(apenasVeganos)
+})
+
+
+// BOTÃO 5 → BOVINO
+buttons[4].addEventListener("click", () => {
+    const apenasBovinos = buscarPorCategoria('Bovino');
+    showProducts(apenasBovinos)
+
+})
+
+// BOTÃO 6 → FRANGO
+buttons[5].addEventListener("click", () => {
+    const apenasFrango = buscarPorCategoria('Frango');
+    showProducts(apenasFrango)
+
+})
+
+// BOTÃO 7 → PEIXE
+buttons[6].addEventListener("click", () => {
+    const apenasPeixe = buscarPorCategoria('Peixe');
+    showProducts(apenasPeixe)
+
+})
+
+
+// BOTÃO 8 → COMBO
+buttons[7].addEventListener("click", () => {
+    const apenasCombo = buscarPorCategoria('Combo');
+    showProducts(apenasCombo)
+
+})

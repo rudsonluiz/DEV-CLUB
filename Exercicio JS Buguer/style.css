@@ -9,18 +9,61 @@
 }
 
 body {
-    background-color: black;
+
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #ffffff;
 }
+
+/* IMAGEM DE FUNDO */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("./img/pagina.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.;
+    /* transparência da imagem */
+    z-index: -1;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    
+}
+.paragrafo {
+    color: white;
+    font-size: 40px;   
+    font-weight: bold;
+    text-align: center;
+    
+    
+}
+
+.subtitle {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    
+}   
+
 
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     margin: 20px 0;
-    
-
-
+    flex-wrap: wrap;
 }
 
 
@@ -29,11 +72,12 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    padding: 20px;
+    padding: 6px;
     background-color: rgba(11, 228, 94, 0.8);
     width: 150px;
-    font-size: 15px;
-    
+    height: 60px;    
+    font-size: 18px;
+
 
 }
 
@@ -44,7 +88,8 @@ button:hover {
 
 ul {
     display: grid;
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px 200px 200px 200px 200px;
+    align-items: center;
     justify-content: center;
     gap: 30px;
     list-style: none;
@@ -59,7 +104,7 @@ li {
 img {
     width: 100%;
     border-radius: 5px;
-  
+
 }
 
 p {
@@ -67,6 +112,7 @@ p {
     font-size: 20px;
     font-weight: bold;
 }
+
 .price {
     color: rgb(5, 99, 41);
     font-size: 18px;
