@@ -17,9 +17,9 @@ const menuOptions = [
 
 
 
-{ name: 'Combo', price: 50, category: 'Peixe', src: './img/combo 01 - Peixe.png' },
-{ name: 'Combo', price: 50, category: 'Bovino', src: './img/combo 02 - Bovino.png' },
-{ name: 'Combo', price: 50, category: 'Frango', src: './img/combo 03 - Frango.png' },
+{ name: 'Combo-Peixe', price: 50, category: 'Peixe', src: './img/combo 01 - Peixe.png' },
+{ name: 'Combo-Bovino', price: 50, category: 'Bovino', src: './img/combo 02 - Bovino.png' },
+{ name: 'Combo-Frango', price: 50, category: 'Frango', src: './img/combo 03 - Frango.png' },
 
 
 ]
