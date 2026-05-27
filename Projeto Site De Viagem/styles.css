@@ -29,7 +29,7 @@
   }
 
   .logo-viagem {
-      font-size: 40px, bolder;
+      font-size: 23px;
       font-weight: 700;
       color: white;
       margin: 0, 20px, ;
@@ -45,6 +45,7 @@
       list-style: none;
       text-decoration: none;
       margin: 0 20px;
+      font-size: 19px;
   }
 
   .menu a {
@@ -101,7 +102,7 @@
       margin-bottom: 5px;
       text-transform: uppercase;
       font-weight: 800;
-      font-size: 18px bolder;
+      font-size: 23px;
       margin-top: 50px;
 
   }
@@ -160,7 +161,7 @@
       border-radius: 30px;
       text-align: center;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: .4s;
+      transition: .5s;
       margin-top: -50px;
 
 
@@ -179,7 +180,7 @@
 
   .stat-card p {
       color: #d9d9d9;
-      font-size: 10px;
+      font-size: 18px;
       font-weight: 300;
       display: block;
       margin: 10px;
@@ -215,10 +216,11 @@
 
   .destination-grid {
       display: grid;
-      grid-template-columns: 500px 500px 500px;      
-      justify-content: center;
-      gap: 30px;
-      margin-top: 0;
+      grid-template-columns: 500px 500px 500px;
+      justify-content: center;      
+      column-gap: 40px;
+      row-gap: 80px;
+      
   }
 
   .destination-card {
@@ -252,6 +254,7 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 35px;
+      margin: 10px;
 
   }
 
@@ -274,7 +277,7 @@
   .btn {
       padding: 08px 10px;
       border-radius: 40px;
-      font-size: 9px;
+      font-size: 19px;
       border: none;
       background: linear-gradient(45deg, #00d9ff, #0066ff);
       color: white;
@@ -299,14 +302,14 @@
       align-items: center;
       gap: 10px;
       max-width: 1200px;
-      margin-top: -80px;
+      margin-top: -70px;
   }
 
   .about img {
-      width: 50%;
+      width: 70%;
       max-width: 450px;
       border-radius: 35px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
+      box-shadow: 20px 20px 50px rgba(0, 0, 0, .4);
       height: auto;
       margin-left: -40px;
 
@@ -314,12 +317,12 @@
 
   .about-content {
       flex: 1;
-      max-width: 550px;
+      max-width: 700px;
 
   }
 
   .about-content h2 {
-      font-size: clamp(16px, 0.8vw, 19px);
+      font-size: clamp(19px, 0.8vw, 21px);
       margin-bottom: 0px;
       line-height: 1.2;
       color: #fff;
@@ -365,6 +368,38 @@
       padding: 120px 8%;
       text-align: center;
   }
+  .whatsapp-contact {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background: #25d366; /* Cor oficial do WhatsApp */
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+    background: #20ba5a;
+}
+
+.ou-text {
+    color: #d9d9d9;
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 300;
+}
 
   .contact-form {
       max-width: 800px;
