@@ -1,5 +1,5 @@
 const list = document.querySelector("ul")
-const buttons = document.querySelectorAll("button")
+const buttons = document.querySelectorAll(".container button")
 
 
 // NÃO MOSTRA NADA AO INICIAR
@@ -18,8 +18,7 @@ function showProducts(arrayProducts) {
                 <img src="${product.src}">
                 <p>${product.name}</p>
                 <p class="price">R$ ${product.price.toFixed(2)}</p>
-                <p class="${product.vegan ? 'vegan' : 'not-vegan'}">
-                    ${product.vegan ? '🌱 Vegano' : '🍔 Tradicional'}
+                <button class="order-btn" onclick="adicionarAoPedido('${product.name}', ${product.price})"> Pedido </button>
                 </p>
             </li>
         `
@@ -104,3 +103,96 @@ buttons[7].addEventListener("click", () => {
     showProducts(apenasCombo)
 
 })
+
+// Array que armazenará os itens do carrinho temporariamente
+let carrinho = [];
+const taxaEntrega = 10.00;
+
+// Função chamada ao clicar no botão "Pedido" de qualquer card
+function adicionarAoPedido(nomeItem, precoItem) {
+    // Verifica se o item já foi adicionado antes
+    const itemExistente = carrinho.find(item => item.nome === nomeItem);
+
+    if (itemExistente) {
+        itemExistente.quantidade++;
+    } else {
+        carrinho.push({
+            nome: nomeItem,
+            preco: precoItem,
+            quantidade: 1
+        });
+    }
+
+    atualizarInterfaceCarrinho();
+}
+
+// Altera a quantidade direto pelos botões +/- do carrinho
+function mudarQuantidadeItem(nomeItem, mudanca) {
+    const item = carrinho.find(item => item.nome === nomeItem);
+
+    if (item) {
+        item.quantidade += mudanca;
+        // Se a quantidade chegar a 0, remove o item do carrinho
+        if (item.quantidade <= 0) {
+            carrinho = carrinho.filter(item => item.nome !== nomeItem);
+        }
+    }
+    atualizarInterfaceCarrinho();
+}
+// Atualiza o HTML interno do carrinho de compras e faz a soma dos valores
+function atualizarInterfaceCarrinho() {
+    const containerItens = document.getElementById('cart-items-list');
+    const txtSubtotal = document.getElementById('subtotal-price');
+    const txtTotal = document.getElementById('total-price');
+
+    // Limpa a lista atual para re-renderizar
+    containerItens.innerHTML = '';
+
+    if (carrinho.length === 0) {
+        containerItens.innerHTML = '<p class="empty-text">Nenhum item adicionado ainda.</p>';
+        txtSubtotal.innerText = 'R$ 0,00';
+        txtTotal.innerText = 'R$ 0,00';
+        return;
+    }
+
+    // Alimenta a lista com os itens do array usando iteração
+    carrinho.forEach(item => {
+        const divItem = document.createElement('div');
+        divItem.className = 'item-added';
+        
+        // CORRIGIDO: Multiplicação direta sem atribuições confusas (=)
+        const valorTotalItem = item.preco * item.quantidade;
+
+        divItem.innerHTML = `
+            <div>
+                <span>${item.quantidade}x ${item.nome}</span>
+                <br>
+                <small style="color: #0be45e">R$ ${valorTotalItem.toFixed(2).replace('.', ',')}</small>
+            </div>
+            <div>
+                <button class="change-qty-btn" onclick="mudarQuantidadeItem('${item.nome}', -1)">-</button>
+                <button class="change-qty-btn" onclick="mudarQuantidadeItem('${item.nome}', 1)">+</button>
+            </div>
+        `;
+        containerItens.appendChild(divItem);
+    });
+
+    // Calcula a soma de tudo usando a lógica do Reduce
+    const subtotal = carrinho.reduce((acumulador, item) => acumulador + (item.preco * item.quantidade), 0);
+    const totalGeral = subtotal + taxaEntrega;
+
+    // Atualiza os textos de valores na tela (Espaços extras removidos)
+    txtSubtotal.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+    txtTotal.innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
+}
+
+// Função do botão de finalizar pedido
+function finalizarCompra() {
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio! Adicione algum hambúrguer.");
+        return;
+    }
+    alert("Pedido enviado para a cozinha com sucesso! 🍔🔥");
+    carrinho = [];
+    atualizarInterfaceCarrinho();
+}

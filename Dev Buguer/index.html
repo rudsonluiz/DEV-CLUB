@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-</lang>
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +23,7 @@
 
     <div class="container">
 
-        <button class="show-all"> Produtos <br> (ForEach) </button>
+        <button> Produtos <br> (ForEach) </button>
         <button> Descontos <br> (Map) </button>
         <button> Somar tudo <br> (Reduce) </button>
         <button> Veganos <br> (Filter) </button>
@@ -34,92 +33,134 @@
         <button> Combo <br> (Filter) </button>
     </div>
 
-    <ul>
-        <li>
-            <img src="./img/bacon-egg.png">
-            <p>x-Bacon Egg</p>
-            <p class="price">R$ 35,00</p>
-            <button class="order-btn"> Pedido </button>
-        </li>
-        <li>
-            <img src="./img/monstruoso-vegan.png">
-            <p>Monstruoso Vegan</p>
-            <p class="price">R$ 50,00</p>
-        </li>
-        <li>
-            <img src="./img/monstruoso.png">
-            <p>Monstruoso</p>
-            <p class="price">R$ 40,00</p>
-        </li>
-        <li>
-            <img src="./img/xbacon.png">
-            <p>x-Bacon</p>
-            <p class="price">R$ 30,00</p>
-        </li>
-        <li>
-            <img src="./img/xsalada.png">
-            <p>x-Salada</p>
-            <p class="price">R$ 25,00</p>
-        </li>
-        <li>
-            <img src="./img/xvegan.png">
-            <p>x-Vegan</p>
-            <p class="price">R$ 45,00</p>
-        </li>
-        <li>
-            <img src="./img/cachorro quente completo.png">
-            <p>Cachorro Quente Completo</p>
-            <p class="price">R$ 25,00</p>
-        </li>
-        <li>
-            <img src="./img/hamburguer simples.png">
-            <p>Hamburguer Simples</p>
-            <p class="price">R$ 20,00</p>
+    <div class="main-layout">
 
-        </li>
-        <li>
-            <img src="./img/frango.png">
-            <p>Frango</p>
-            <p class="price">R$ 35,00</p>
+        <ul id="menu-list">
+            <li>
+                <img src="./img/bacon-egg.png">
+                <p>x-Bacon Egg</p>
+                <p class="price">R$ 35,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('x-Bacon Egg', 35.00)"> Pedido </button>
+            </li>
 
-        </li>
-        <li>
-            <img src="./img/x-tudo de frango.png">
-            <p>X-Tudo de Frango</p>
-            <p class="price">R$ 45,00</p>
+            <li>
+                <img src="./img/monstruoso-vegan.png">
+                <p>Monstruoso Vegan</p>
+                <p class="price">R$ 50,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('Monstruoso Vegan', 50.00)"> Pedido </button>
+            </li>
 
-        </li>
-        <li>
-            <img src="./img/x-tudo de peixe.png">
-            <p>X-Tudo de Peixe</p>
-            <p class="price">R$ 45,00</p>
+            <li>
+                <img src="./img/monstruoso.png">
+                <p>Monstruoso</p>
+                <p class="price">R$ 40,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('Monstruoso', 40.00)"> Pedido </button>
+            </li>
 
-        </li>
-        <li>
-            <img src="./img/combo 01 - Peixe.png.">
-            <p>Combo-Peixe 01</p>
-            <p class="price">R$ 50,00</p>
+            <li>
+                <img src="./img/xbacon.png">
+                <p>x-Bacon</p>
+                <p class="price">R$ 30,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('x-Bacon', 30.00)"> Pedido </button>
+            </li>
 
-        </li>
+            <li>
+                <img src="./img/xsalada.png">
+                <p>x-Salada</p>
+                <p class="price">R$ 25,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('x-Salada', 25.00)"> Pedido </button>
+            </li>
 
-        <li>
-            <img src="./img/combo 02 - Bovino.png">
-            <p>Combo-Bovino 02</p>
-            <p class="price">R$ 50,00</p>
+            <li>
+                <img src="./img/xvegan.png">
+                <p>x-Vegan</p>
+                <p class="price">R$ 45,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('x-Vegan', 45.00)"> Pedido </button>
+            </li>
 
-        </li>
-        <li>
-            <img src="./img/combo 03 - Frango.png">
-            <p>Combo-Frango 03</p>
-            <p class="price">R$ 50,00</p>
+            <li>
+                <img src="./img/cachorro quente completo.png">
+                <p>Cachorro Quente Completo</p>
+                <p class="price">R$ 25,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('Cachorro Quente Completo', 25.00)"> Pedido
+                </button>
+            </li>
 
-        </li>
+            <li>
+                <img src="./img/hamburguer simples.png">
+                <p>Hamburguer Simples</p>
+                <p class="price">R$ 20,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('Hamburguer Simples', 20.00)"> Pedido </button>
+            </li>
+
+            <li>
+                <img src="./img/frango.png">
+                <p>Frango</p>
+                <p class="price">R$ 35,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('Frango', 35.00)"> Pedido </button>
+            </li>
+
+            <li>
+                <img src="./img/x-tudo de frango.png">
+                <p>X-Tudo de Frango</p>
+                <p class="price">R$ 45,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('X-Tudo de Frango', 45.00)"> Pedido </button>
+            </li>
+
+            <li>
+                <img src="./img/x-tudo de peixe.png">
+                <p>X-Tudo de Peixe</p>
+                <p class="price">R$ 45,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('X-Tudo de Peixe', 45.00)"> Pedido </button>
+            </li>
+
+            <li>
+                <img src="./img/combo 01 - Peixe.png.">
+                <p>Combo-Peixe 01</p>
+                <p class="price">R$ 50,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('Combo-Peixe 01', 50.00)"> Pedido </button>
+            </li>
+
+            <li>
+                <img src="./img/combo 02 - Bovino.png">
+                <p>Combo-Bovino 02</p>
+                <p class="price">R$ 50,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('Combo-Bovino 02', 50.00)"> Pedido </button>
+            </li>
+
+            <li>
+                <img src="./img/combo 03 - Frango.png">
+                <p>Combo-Frango 03</p>
+                <p class="price">R$ 50,00</p>
+                <button class="order-btn" onclick="adicionarAoPedido('Combo-Frango 03', 50.00)"> Pedido </button>
+            </li>
 
 
-    </ul>
+        </ul>
+        <div class="cart-summary">
+            <h3>RESUMO DO PEDIDO</h3>
+            <div id="cart-items-list" class="cart-items-list">
+                <p class="empty-text">Nenhum item adicionado ainda.</p>
+            </div>
 
+            <div class="cart-totals">
+                <div class="total-line">
+                    <span>SUBTOTAL</span>
+                    <span id="subtotal-price">R$ 0,00</span>
+                </div>
+                <div class="total-line">
+                    <span>TAXA DE ENTREGA</span>
+                    <span>R$ 10,00</span>
+                </div>
+                <div class="total-line total-highlight">
+                    <span>TOTAL</span>
+                    <span id="total-price">R$ 0,00</span>
+                </div>
+            </div>
+            <button class="checkout-btn" onclick="finalizarCompra()">FINALIZAR PEDIDO</button>
+        </div>
 
-
+    </div>
 
 
 </body>
