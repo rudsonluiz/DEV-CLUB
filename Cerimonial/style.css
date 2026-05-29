@@ -108,30 +108,43 @@ nav a:hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.45);
-    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    /* Fundo preto com 50% de opacidade */
     font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Cria um contorno escuro suave */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+    /* Cria um contorno escuro suave */
 }
 
 .hero-content {
     display: flex;
-    justify-content: space-between; /* Empurra a foto pra esquerda, logo pra direita e texto pro meio */
-    align-items: center;            /* Alinha todos verticalmente pelo centro */
+    justify-content: space-between;
+    /* Empurra a foto pra esquerda, logo pra direita e texto pro meio */
+    align-items: center;
+    /* Alinha todos verticalmente pelo centro */
     width: 100%;
-    max-width: 1200px;              /* Ajuste essa largura máxima se achar que eles ficaram muito longe */
-    margin: 0 auto;                 /* Centraliza o site na tela */
+    max-width: 1200px;
+    /* Ajuste essa largura máxima se achar que eles ficaram muito longe */
+    margin: 0 auto;
+    /* Centraliza o site na tela */
     padding: 40px 20px;
+    z-index: 1;
+
 }
+
 .hero-text {
     display: flex;
-    flex-direction: column;         /* Empilha os textos um embaixo do outro */
-    align-items: center;            /* Centraliza os textos e botões horizontalmente */
-    text-align: center;             /* Centraliza as linhas de texto */
-    flex: 1;                        /* Faz os textos ocuparem o espaço do meio */
-    padding: 0 30px;   
-    color: #ffffff;  
-    font-weight: bold;              /* Evita que o texto encoste nas imagens */
+    flex-direction: column;
+    /* Empilha os textos um embaixo do outro */
+    align-items: center;
+    /* Centraliza os textos e botões horizontalmente */
+    text-align: center;
+    /* Centraliza as linhas de texto */
+    flex: 1;
+    /* Faz os textos ocuparem o espaço do meio */
+    padding: 0 30px;
+    color: #ffffff;
+    font-weight: bold;
+    /* Evita que o texto encoste nas imagens */
 }
 
 .foto-perfil {
@@ -145,7 +158,10 @@ nav a:hover {
     margin-right: auto;
     margin-top: -300px;
     margin-left: -300px;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
+    cursor: pointer;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
     /* Garante que a margem esquerda seja zero */
 }
 
@@ -161,6 +177,9 @@ nav a:hover {
     margin-top: -200px;
     margin-right: -300px;
     margin-bottom: 0px;
+    cursor: pointer;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
 }
 
 .tag {
