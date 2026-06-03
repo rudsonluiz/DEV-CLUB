@@ -160,7 +160,7 @@ nav a:hover {
     margin-left: -300px;
     margin-bottom: 0px;
     cursor: pointer;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.8s ease, opacity 0.5s ease;
 
     /* Garante que a margem esquerda seja zero */
 }
@@ -180,6 +180,11 @@ nav a:hover {
     cursor: pointer;
     transition: transform 0.5s ease, opacity 0.5s ease;
 
+}
+
+.foto-perfil:hover,
+.logo-barcelos:hover {
+    transform: scale(1.5);
 }
 
 .tag {
@@ -332,6 +337,7 @@ section {
     cursor: pointer;
 }
 
+
 .portfolio-item {
     width: 100%;
     height: auto;
@@ -339,13 +345,10 @@ section {
     transition: 0.5s;
     opacity: 0.8;
     /* As fotos começam um pouco mais foscas */
-
-    /* Transição suave para a propriedade opacity */
     transition: opacity 0.3s ease;
     cursor: pointer;
     overflow: hidden;
     border-radius: 25px;
-
     aspect-ratio: 1 / 1;
     /* Opcional: Deixa todas as fotos perfeitamente quadradas */
     background-color: #f0f0f0;
@@ -364,9 +367,9 @@ section {
 }
 
 .portfolio-item:hover img {
-    transform: translateY(-5px) scale(1.02);
-    /* Sobe 5px e aumenta 2% de tamanho */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     /* Cria uma sombra suave embaixo */
 }
 
