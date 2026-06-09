@@ -580,3 +580,160 @@ footer {
     }
 
 }
+
+@media (max-width: 768px) {
+
+    /* Global padronização de espaçamento nas seções */
+    section {
+        padding: 40px 20px !important;
+    }
+
+    .section-title h2 {
+        font-size: 24px !important;
+    }
+
+    /* Esconde completamente o menu superior no celular */
+    .menu {
+        display: none !important;
+    }
+
+    /* Organiza o topo em formato de coluna para o Flexbox alinhar os elementos */
+    .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-top: 60px !important;
+        /* Espaço confortável para não colar no topo do aparelho */
+    }
+
+    /* CORREÇÃO DA FOTO: Zera as margens negativas do desktop e força a exibição no topo */
+    .foto-perfil {
+        order: 1 !important;
+        /* Move para primeiro lugar absoluto */
+        display: block !important;
+        width: 160px !important;
+        /* Tamanho ideal e visível para telas mobile */
+        height: 160px !important;
+        border-radius: 50% !important;
+        /* Mantém perfeitamente redonda */
+        margin: 0 auto 20px auto !important;
+        /* Remove os -300px/-200px e centraliza perfeitamente */
+        top: 0 !important;
+        position: relative !important;
+    }
+
+    /* O bloco de textos vem logo em seguida, abaixo da foto */
+    .hero-text {
+        order: 2 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 0 !important;
+    }
+
+    /* Ajuste do tamanho dos textos gigantes para caber na tela do celular */
+    .tag {
+        font-size: 24px !important;
+        /* Diminuído de 56px para não quebrar a tela */
+        margin-top: 10px !important;
+        padding: 6px 15px !important;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem !important;
+        /* Reduzido de 5rem para equilibrar com o mobile */
+        margin: 15px 0 !important;
+    }
+
+    .hero p {
+        font-size: 1rem !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* Botões se adaptando à largura do celular */
+    .hero-buttons {
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .hero-buttons a {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* A logo Barcelos vai para o final do bloco do cabeçalho */
+    .logo-barcelos {
+        order: 3 !important;
+        width: 120px !important;
+        height: 120px !important;
+        border-radius: 50% !important;
+        margin: 30px auto 0 auto !important;
+        /* Reseta as margens negativas do desktop */
+    }
+
+    /* Seção Sobre Mim */
+    .about-container {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .about-image img {
+        max-height: 250px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .about-cards {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* Seção Serviços */
+    .services-container {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* Portfólio (Grade de fotos) */
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    /* Depoimentos */
+    .testimonials-container {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* Contato & Formulário */
+    .contact-container {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    .contact-form {
+        width: 100% !important;
+        padding: 20px !important;
+    }
+
+    /* Rodapé */
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 25px !important;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
