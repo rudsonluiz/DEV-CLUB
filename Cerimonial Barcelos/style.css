@@ -466,6 +466,35 @@ section {
     resize: none;
 }
 
+#resultado {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.success {
+    color: #28a745;
+}
+
+.error {
+    color: #ff4d4d;
+}
+
+#email-error {
+    color: #ff4d4d;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+#email-error {
+    color: #ff4d4d;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
 footer {
     background: #151311;
     color: white;

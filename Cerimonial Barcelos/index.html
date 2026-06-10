@@ -301,18 +301,22 @@
 
             </div>
 
-            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
 
                 <input type="hidden" name="access_key" value="e55188db-bb07-4dff-b384-c1091f14e28f">
 
                 <input type="text" name="Nome Completo" placeholder="Nome Completo" required>
-                <input type="email" name="E-mail" placeholder="Seu E-mail" required>
+                <input type="email"  id="email" name="E-mail" placeholder="Seu E-mail" required>
+                <small id="email-error"></small>
                 <input type="tel" name="Telefone" placeholder="Telefone">
 
                 <div style="margin-bottom: 15px;">
                     <label style="display:block; font-size: 14px; color: #666; margin-bottom: 5px;">Data do
                         Casamento</label>
                     <input type="date" name="Data do Casamento">
+
+
+                    <small id="email-error"></small>
                 </div>
 
                 <textarea name="Mensagem dos Noivos" placeholder="Conte-nos um pouco sobre seu casamento..."></textarea>
@@ -320,6 +324,9 @@
                 <button type="submit" class="btn-primary">Enviar Mensagem</button>
 
             </form>
+
+            <div id="resultado"></div>
+
         </div>
 
     </section>
