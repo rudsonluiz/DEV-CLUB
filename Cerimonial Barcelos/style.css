@@ -373,49 +373,6 @@ section {
     /* Cria uma sombra suave embaixo */
 }
 
-/* O Modal (fundo preto transparente) */
-.modal {
-    display: none;
-    /* Começa escondido */
-    position: fixed;
-    z-index: 1000;
-    /* Fica por cima de tudo */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    /* Fundo preto com 90% de opacidade */
-    justify-content: center;
-    align-items: center;
-}
-
-/* A Imagem dentro do Modal */
-.modal-content {
-    max-width: 85%;
-    max-height: 85vh;
-    object-fit: contain;
-    border-radius: 10px;
-    animation: zoomIn 0.3s ease;
-    /* Animação suave de abertura */
-}
-
-/* Botão de Fechar (X) */
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.modal-close:hover {
-    color: #bbb;
-}
-
 /* Animação para a foto abrir com efeito de zoom */
 @keyframes zoomIn {
     from {
@@ -580,6 +537,7 @@ footer {
     }
 
 }
+
 
 @media (max-width: 768px) {
 
