@@ -72,15 +72,33 @@ div {
     transition: background-color 0.3s ease;
 }
 
+.home-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    min-height: 100vh;       /* Faz a div ter exatamente a altura da tela do usuário */
+    width: 100%;             /* Garante que ocupe toda a largura */
+    box-sizing: border-box;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;  /* Coloca a foto, o nome e a profissão um embaixo do outro */
+    align-items: center;     /* Centraliza os itens internamente */
+    text-align: center;      /* Garante que os textos fiquem centralizados */
+    margin:  10px;               /* Remove as margens padrões que a tag figure traz */
+}
+
 
 
 
 .foto-perfil {
-    width: 395px;
-    height: 410px;
+    width: 415px;
+    height: 470px;
     box-shadow: 0px 0px 20px rgba(79, 70, 229, 0.4);
     border-radius: 60%;
     margin-top: 170px;
+
 
 
 }
@@ -97,15 +115,24 @@ div {
 
 /* TÍTULOS */
 
-/*.sub-titulo {
+.sub-titulo {
     top: 50%;
     left: 50%;
     text-align: center;
     font-size: 2.5rem;
-    margin-top: 580px;
-    margin-bottom: 80px;
+    margin-top: auto;
     color: #38bdf8;
-}//
+    text-decoration: none;
+}
+
+.texto-container {
+    text-align: center;
+    margin-top: 10px;
+    padding: 80px 20px;
+    font-size: 22px;
+    
+}
+
 
 /* SOBRE */
 
@@ -129,13 +156,6 @@ div {
     font-size: 2.5rem;
 }
 
-.texto-container {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-}
-
 /* PROJETOS */
 
 .projetos {
@@ -147,7 +167,11 @@ div {
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    row-gap: 0;
+    column-gap: 30px;
+
+    margin-top: 10px;
+
 }
 
 .projetos-card {
@@ -165,113 +189,136 @@ div {
 
 .projeto-imagem {
     width: 100%;
-    height: 220px;
+    height: 70%;
     object-fit: cover;
 }
 
 .projeto-titulo {
     padding: 15px;
     color: #38bdf8;
+    text-decoration: none;
 }
 
 .projeto-descricao {
     padding: 0 15px 20px;
+    text-decoration: none;
+
 }
 
 /* HABILIDADES */
-
-.habilidades {
-    max-width: 1000px;
-    margin: auto;
-    padding: 80px 20px;
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* Distribui as colunas deixando um espaço entre elas */
+    gap: 20px;
+    /* Cria um espaçamento de 20px entre as colunas */
+    flex-wrap: wrap;
+    /* Garante que se a tela for pequena (celular), uma coluna vá para baixo da outra */
 }
 
-.skills {
+/* HABILIDADES & FORMAÇÃO (Estilos Compartilhados do Container) */
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    /* Aumentei um pouco o espaço entre as duas colunas */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    /* Limita a largura máxima das duas colunas juntas */
+    margin: auto;
+    padding: 60px 20px;
+    
+}
+
+.habilidades,
+.formacao {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* ESTILO DOS CARDS/TAGS (A mágica acontece aqui) */
+/* Aplicamos o flexbox tanto na div .skills quanto na ul da formação */
+.skills,
+.formacao ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    padding: 0;
+    /* Remove o recuo padrão que a 'ul' tem */
+    list-style: none;
+    /* Remove as bolinhas da lista */
+    margin-top: 90px;
+    text-align: center;
+    font-size: 22px;
 }
 
-.skills span {
+/* Unificamos o visual dos 'span' e dos 'li' */
+.skills span,
+.formacao li {
     background: #1e293b;
-    padding: 12px 20px;
+    padding: 19px 25px;
     border-radius: 30px;
     border: 1px solid #38bdf8;
     transition: .3s;
+    cursor: pointer;
+    /* Deixa a mãozinha do mouse ao passar por cima */
 }
 
-.skills span:hover {
+/* Efeito Hover unificado para ambos */
+.skills span:hover,
+.formacao li:hover {
     background: #38bdf8;
     color: #0f172a;
 }
 
-/* FORMAÇÃO */
 
-.formacao {
-    max-width: 800px;
-    margin: auto;
-    padding: 80px 20px;
-}
-
-.formacao ul {
-    list-style: none;
-}
-
-.formacao li {
-    background: #1e293b;
-    margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-/* CONTATO */
-.contatos {
+.contato-container {
     text-align: center;
     padding: 80px 20px;
+    font-size: 22px;
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
 
-/* Estilo para o Título "Contato" (Garante que ele seja apenas texto) */
-.sub-titulo {
-    color: #ffffff;
-    /* Cor branca para destacar no fundo escuro */
-    font-size: 36px;
-    /* Tamanho de título */
-    margin-bottom: 40px;
-    /* Espaço entre o título e os links abaixo */
-    background: none;
-    /* Remove qualquer fundo por segurança */
-    padding: 0;
-    /* Remove preenchimentos */
-}
 
-/* Estilo geral dos links de texto (LinkedIn e GitHub) */
-.contatos a {
+
+.contato-container a {
     display: inline-block;
     margin: 0 20px;
     background: #38bdf8;
-    /* Garante que não haja fundo */
     color: #020608;
-    /* Cor azul bonita para o texto */
     text-decoration: none;
-    /* Remove o sublinhado padrão */
     font-weight: bold;
     font-size: 22px;
-    transition: 0.7s;
     border-radius: 30px;
     padding: 25px 30px;
     vertical-align: middle;
-    
+
 }
 
-.contatos a:hover {
+.contato-container a:hover {
     color: #7dd3fc;
     transform: scale(1.2);
     /* Cor mais clara ao passar o mouse */
 }
 
+.titulo-contato {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+
 /* Estilo EXCLUSIVO para o botão do WhatsApp */
-.contatos a.whatsapp {
+.contato-container a.whatsapp {
     background: #25D366;
     /* Cor oficial do WhatsApp */
     color: #ffffff;
@@ -284,21 +331,13 @@ div {
     /* Sombra suave verde */
 }
 
-.contatos a.whatsapp:hover {
+.contato-container a.whatsapp:hover {
     background: #06683a;
     /* Verde um pouco mais escuro no hover */
     transform: scale(1.2);
     /* Um leve efeito de crescer sem distorcer */
 }
 
-/* RODAPÉ */
-
-footer {
-    text-align: center;
-    padding: 30px;
-    background: #020617;
-    color: #94a3b8;
-}
 
 /* RESPONSIVO */
 
