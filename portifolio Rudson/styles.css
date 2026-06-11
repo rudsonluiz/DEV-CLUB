@@ -7,22 +7,25 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: #0a0f1c
+    background-color: #0a0f1c;
+    scroll-snap-type: y proximity;
 }
 
 .navegacao {
-    background-color: rgb(12, 30, 61, 0.4);
+    background-color: rgba(10, 15, 28, 0.95);
+    /* Cor escura sólida */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 70;
     padding: 1.1rem;
     font-size: 25px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Reduzido levemente para caber melhor */
 
 }
-
-
 
 .menu {
     display: flex;
@@ -42,11 +45,20 @@ html {
     padding: 0.5rem 0;
 }
 
-div {
-    margin-top: 90px;
-    text-align: center;
-
+.home-container {
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    min-height: 100vh;
+    /* Faz a div ter exatamente a altura da tela do usuário */
+    width: 100%;
+    /* Garante que ocupe toda a largura */
+    box-sizing: border-box;
 }
+
+
 
 .curriculo {
     background-color: #075518;
@@ -64,7 +76,7 @@ div {
     top: 50%;
     /* Move até o meio verticalmente */
     transform: translateY(-50%);
-    /* Alinha perfeitamente ao centro vertical */
+    text-decoration: none;
 }
 
 .curriculo:hover {
@@ -72,21 +84,56 @@ div {
     transition: background-color 0.3s ease;
 }
 
+.home-container,
+.sobre-container,
+.container,
+.experiencia,
+.projetos,
+.contato {
+    min-height: 100vh;
+    /* Força a seção a ter no mínimo a altura total da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza o conteúdo VERTICALMENTE */
+    align-items: center;
+    /* Centraliza o conteúdo HORIZONTALMENTE */
+    padding: 100px 20px 40px 20px;
+    /* Padding superior protege o conteúdo de sumir atrás do menu */
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    /* Alinha o topo da seção com o topo da tela ao scrollar/clicar */
+    scroll-margin-top: 40px;
+    /* Compensação da altura do menu fixo */
+    text-decoration: none;
+}
+
 .home-container {
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
-    min-height: 100vh;       /* Faz a div ter exatamente a altura da tela do usuário */
-    width: 100%;             /* Garante que ocupe toda a largura */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    min-height: 100vh;
+    /* Faz a div ter exatamente a altura da tela do usuário */
+    width: 100vw;
+    /* Garante que ocupe toda a largura */
     box-sizing: border-box;
+    scroll-snap-align: start;
+    /* Alinha o topo da seção com o topo da tela ao scrollar/clicar */
+    scroll-margin-top: 40px;
 }
 
 .home {
     display: flex;
-    flex-direction: column;  /* Coloca a foto, o nome e a profissão um embaixo do outro */
-    align-items: center;     /* Centraliza os itens internamente */
-    text-align: center;      /* Garante que os textos fiquem centralizados */
-    margin:  10px;               /* Remove as margens padrões que a tag figure traz */
+    flex-direction: column;
+    /* Coloca a foto, o nome e a profissão um embaixo do outro */
+    align-items: center;
+    /* Centraliza os itens internamente */
+    text-align: center;
+    /* Garante que os textos fiquem centralizados */
+    margin: 10px;
+    /* Remove as margens padrões que a tag figure traz */
 }
 
 
@@ -114,64 +161,59 @@ div {
 }
 
 /* TÍTULOS */
+.sobre-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px 40px 20px;
+    /* Ajustado o respiro */
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    /* Alinha o topo da seção com o topo da tela ao scrollar/clicar */
+    scroll-margin-top: 80px;
+
+}
 
 .sub-titulo {
-    top: 50%;
-    left: 50%;
+    display: block;
+    width: 100%;
     text-align: center;
     font-size: 2.5rem;
-    margin-top: auto;
     color: #38bdf8;
     text-decoration: none;
+    margin: 0 auto 20px auto;
+    scroll-margin-top: 200px;
+
+    /* Altura ideal para compensar o menu fixo */
 }
 
 .texto-container {
-    text-align: center;
-    margin-top: 10px;
+    text-align: justify;
+    margin: 10px 10px;
     padding: 80px 20px;
     font-size: 22px;
-    
-}
-
-
-/* SOBRE */
-
-#sobre {
-    font-size: 2.5rem;
-    max-width: 1000px;
-    margin: 100px auto;
-    padding: 80px 20px;
-    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 0 20px;
 
 }
 
 
-/* EXPERIÊNCIA */
-
-.experiencia {
-    max-width: 1000px;
-    margin: auto;
-    padding: 80px 20px;
-    text-align: center;
-    font-size: 2.5rem;
-}
-
-/* PROJETOS */
 
 .projetos {
     padding: 80px 20px;
 }
 
 .projetos-container {
-    max-width: 1200px;
-    margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    row-gap: 0;
-    column-gap: 30px;
-
-    margin-top: 10px;
-
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .projetos-card {
@@ -205,35 +247,26 @@ div {
 
 }
 
-/* HABILIDADES */
-.container {
-    display: flex;
-    justify-content: space-between;
-    /* Distribui as colunas deixando um espaço entre elas */
-    gap: 20px;
-    /* Cria um espaçamento de 20px entre as colunas */
-    flex-wrap: wrap;
-    /* Garante que se a tela for pequena (celular), uma coluna vá para baixo da outra */
-}
 
 /* HABILIDADES & FORMAÇÃO (Estilos Compartilhados do Container) */
 .container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    justify-content: center;
     gap: 40px;
-    /* Aumentei um pouco o espaço entre as duas colunas */
-    flex-wrap: wrap;
-    max-width: 1200px;
-    /* Limita a largura máxima das duas colunas juntas */
-    margin: auto;
+    margin: 40px auto;
     padding: 60px 20px;
-    
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    max-width: 1200px;
+    scroll-margin-top: 100px;
+    /* Altura ideal para compensar o menu fixo */
+
 }
 
 .habilidades,
 .formacao {
     flex: 1;
     min-width: 300px;
+    scroll-margin-top: 100px
 }
 
 /* ESTILO DOS CARDS/TAGS (A mágica acontece aqui) */
@@ -245,12 +278,11 @@ div {
     justify-content: center;
     gap: 15px;
     padding: 0;
-    /* Remove o recuo padrão que a 'ul' tem */
     list-style: none;
-    /* Remove as bolinhas da lista */
-    margin-top: 90px;
+    margin-top: 30px;
+    /* Diminuído de 90px para 30px */
     text-align: center;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 /* Unificamos o visual dos 'span' e dos 'li' */
@@ -263,6 +295,17 @@ div {
     transition: .3s;
     cursor: pointer;
     /* Deixa a mãozinha do mouse ao passar por cima */
+}
+
+/* 5. Ajuste na Seção de Experiência: Faltava o scroll-margin para o menu */
+.experiencia {
+    scroll-margin-top: 100px;
+}
+
+/* 6. Ajuste na Seção de Projetos */
+.projetos {
+    padding: 60px 20px;
+    scroll-margin-top: 80px;
 }
 
 /* Efeito Hover unificado para ambos */
@@ -280,7 +323,8 @@ div {
     background: #1e293b;
     padding: 30px;
     border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 20px;
+    height: 80%;
 }
 
 
@@ -337,6 +381,7 @@ div {
     transform: scale(1.2);
     /* Um leve efeito de crescer sem distorcer */
 }
+
 
 
 /* RESPONSIVO */
