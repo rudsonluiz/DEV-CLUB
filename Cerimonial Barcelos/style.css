@@ -373,6 +373,72 @@ section {
     /* Cria uma sombra suave embaixo */
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    /* Garante que vai ficar por cima de tudo, até do menu */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Fundo preto bem escuro */
+    justify-content: center;
+    align-items: center;
+}
+
+/* A imagem expandida na tela */
+.modal-content {
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease;
+    /* Efeito suave de abertura */
+}
+
+/* Botão de fechar (X) */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    color: #bbb;
+}
+
+/* Pequeno efeito de cursor nas imagens do portfólio para o usuário saber que dá para clicar */
+.portfolio-item {
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.02);
+    filter: brightness(0.9);
+}
+
+/* Animação para a foto abrir elegantemente */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 /* Animação para a foto abrir com efeito de zoom */
 @keyframes zoomIn {
     from {

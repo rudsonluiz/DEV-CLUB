@@ -1,26 +1,29 @@
-// Seleciona os elementos necessários
-const portfoliomodal = document.getElementById('portfolio-modal');
-const modalImg = document.getElementById('modal-img');
-const closeBtn = document.querySelector('.modal-close');
-const items = document.querySelectorAll('.portfolio-item');
+// Seleciona os elementos do modal
+const modal = document.getElementById("portfolio-modal");
+const modalImg = document.getElementById("modal-img");
+const closeBtn = document.querySelector(".modal-close");
 
-// Adiciona o evento de clique em cada foto do portfólio
-items.forEach(item => {
-    item.addEventListener('click', () => {
-        portfoliomodal.style.display = 'flex'; // Exibe o modal centralizado
-        modalImg.src = item.src; // Pega o caminho da foto clicada e joga no modal
+// Seleciona todas as imagens do portfólio
+const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+// Adiciona o evento de clique em CADA uma das imagens do portfólio
+portfolioItems.forEach(item => {
+    item.addEventListener("click", function() {
+        modal.style.display = "flex"; // Mostra o modal centralizado
+        modalImg.src = this.src;      // Copia o caminho da imagem clicada para o modal
+        modalImg.alt = this.alt;      // Copia o texto alternativo por acessibilidade
     });
 });
 
-// Fecha o modal ao clicar no botão (X)
-closeBtn.addEventListener('click', () => {
-    portfoliomodal.style.display = 'none';
+// Quando o usuário clicar no (X), o modal fecha
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
 });
 
-// Fecha o modal se o usuário clicar no fundo escuro (fora da foto)
-portfoliomodal.addEventListener('click', (e) => {
-    if (e.target === portfoliomodal) {
-        portfoliomodal.style.display = 'none';
+// Opcional: Se o usuário clicar no fundo preto (fora da imagem), o modal também fecha
+modal.addEventListener("click", (evento) => {
+    if (evento.target === modal) {
+        modal.style.display = "none";
     }
 });
 
