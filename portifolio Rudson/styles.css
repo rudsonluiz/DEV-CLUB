@@ -122,6 +122,7 @@ html {
     scroll-snap-align: start;
     /* Alinha o topo da seção com o topo da tela ao scrollar/clicar */
     scroll-margin-top: 40px;
+    
 }
 
 .home {
@@ -145,6 +146,7 @@ html {
     box-shadow: 0px 0px 20px rgba(79, 70, 229, 0.4);
     border-radius: 60%;
     margin-top: 170px;
+    
 
 
 
@@ -158,6 +160,7 @@ html {
     color: #38bdf8;
     font-size: 1.3rem;
     margin-top: 10px;
+    font-family: monospace;
 }
 
 /* TÍTULOS */
@@ -185,6 +188,7 @@ html {
     text-decoration: none;
     margin: 0 auto 20px auto;
     scroll-margin-top: 200px;
+    animation: fadeInUp 1.2s ease-out forwards;
 
     /* Altura ideal para compensar o menu fixo */
 }
@@ -382,27 +386,88 @@ html {
     /* Um leve efeito de crescer sem distorcer */
 }
 
-
-
-/* RESPONSIVO */
-
-@media (max-width: 768px) {
-
-    .menu {
-        gap: 15px;
-        flex-wrap: wrap;
+/* ========================================================
+   1. OTIMIZAÇÃO PARA IPADS / TABLETS (Até 1024px)
+   ======================================================== */
+@media (max-width: 1024px) {
+    /* Remove o menu superior para telas touch médias */
+    .navegacao {
+        display: none !important;
     }
 
-    .home h1 {
-        font-size: 2rem;
+    /* Recua o espaço do topo já que o menu sumiu */
+    .home-container, .sobre-container, .container, .experiencia, .projetos, .contato {
+        padding: 60px 20px 40px 20px;
+        min-height: auto; /* Evita espaçamentos vazios gigantescos no iPad */
+    }
+
+    /* Ativa o botão de currículo na seção de contato */
+    .contato-container a.curriculo-contato {
+        display: inline-block !important; /* Lado a lado se couber no tablet */
+        background-color: #075518;
+        color: #ffffff;
+    }
+
+    .contato-container a.curriculo-contato:hover {
+        background-color: #0a7d2e;
     }
 
     .foto-perfil {
-        width: 220px;
-        height: 220px;
+        max-width: 280px; /* Tamanho equilibrado para telas médias */
+    }
+
+    .home h1 {
+        font-size: 2.4rem;
+    }
+
+    .texto-container {
+        font-size: 18px;
+        padding: 30px 20px;
+    }
+}
+
+
+/* ========================================================
+   2. OTIMIZAÇÃO PARA CELULARES (Até 768px)
+   ======================================================== */
+@media (max-width: 768px) {
+    .home-container, .sobre-container, .container, .experiencia, .projetos, .contato {
+        padding: 40px 15px 30px 15px;
+    }
+
+    .container {
+        grid-template-columns: 1fr; /* Coluna única para celular */
+    }
+
+    .home h1 {
+        font-size: 1.8rem;
+    }
+
+    .foto-perfil {
+        max-width: 220px;
+        margin-top: 15px;
+    }
+
+    .profissao {
+        font-size: 1rem;
     }
 
     .sub-titulo {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .texto-container {
+        font-size: 16px;
+        padding: 25px 15px;
+    }
+
+    /* No celular, força os botões de contato a empilharem (um por linha) */
+    .contato-container a, 
+    .contato-container a.curriculo-contato,
+    .contato-container a.whatsapp {
+        display: block !important;
+        margin: 15px 0;
+        font-size: 16px;
+        padding: 14px 20px;
     }
 }
