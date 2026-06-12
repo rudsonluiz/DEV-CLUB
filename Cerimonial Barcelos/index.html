@@ -17,7 +17,10 @@
     <header class="menu">
         <img src=" ./assets/logo2.png " class="logo">
 
+        <a href="#rsvp" class="rsvp-resença">Confirmar Presença</a>
+
         <nav>
+
             <a href="#home">Início</a>
             <a href="#about">Sobre</a>
             <a href="#services">Serviços</a>
@@ -261,6 +264,63 @@
 
     </section>
 
+    <section class="rsvp" id="rsvp">
+
+        <div class="section-title light">
+            <span>R.S.V.P</span>
+            <h2>Confirme sua Presença</h2>
+            <br style="text-align: center; color: #050000; margin-top: 10px;">
+                <br>Selecione o evento desejado e confirme sua presença e de seus acompanhantes.</br>
+            </p>
+        </div>
+
+        <div class="rsvp-container">
+
+            <form id="rsvp-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="e55188db-bb07-4dff-b384-c1091f14e28f">
+                <input type="hidden" name="subject" value="Nova Confirmação de Presença!">
+
+                <div class="rsvp-field">
+                    <label>Para qual evento deseja confirmar?</label>
+                    <select id="select-eventos" name="Evento Selecionado" required>
+                        <option value="" disabled selected>Carregando eventos disponíveis...</option>
+                    </select>
+                </div>
+
+                <input type="text" name="Nome do Convidado" placeholder="Seu Nome Completo" required>
+
+                <input type="tel" name="Telefone" placeholder="Seu Telefone/WhatsApp" required>
+
+                <div class="rsvp-field">
+                    <label>Você comparecerá?</label>
+                    <select name="Status Presença" required style="background: #fff;">
+                        <option value="" disabled selected>Selecione uma opção</option>
+                        <option value="Confirmado">Sim, com certeza irei!</option>
+                        <option value="Recusado">Infelizmente não poderei comparecer</option>
+                    </select>
+                </div>
+
+                <div class="rsvp-field">
+                    <label>Quantidade de Adultos (incluindo você)</label>
+                    <input type="number" name="Qtd Adultos" min="1" max="10" value="1" required>
+                </div>
+
+                <div class="rsvp-field">
+                    <label>Quantidade de Crianças (se houver - ate 12 anos)</label>
+                    <input type="number" name="Qtd Crianças" min="0" max="10" value="0">
+                </div>
+
+                <textarea name="Nomes dos Acompanhantes"
+                    placeholder="Digite o nome dos acompanhantes aprovados no convite..."></textarea>
+
+                <button type="submit" class="btn-primary" style="width: 100%;">Confirmar Presença</button>
+
+            </form>
+
+        </div>
+    </section>
+
     <section class="contact" id="contact">
 
         <div class="section-title">
@@ -306,7 +366,7 @@
                 <input type="hidden" name="access_key" value="e55188db-bb07-4dff-b384-c1091f14e28f">
 
                 <input type="text" name="Nome Completo" placeholder="Nome Completo" required>
-                <input type="email"  id="email" name="E-mail" placeholder="Seu E-mail" required>
+                <input type="email" id="email" name="E-mail" placeholder="Seu E-mail" required>
                 <small id="email-error"></small>
                 <input type="tel" name="Telefone" placeholder="Telefone">
 

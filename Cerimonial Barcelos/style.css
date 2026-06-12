@@ -60,7 +60,8 @@ nav a:hover {
 
 .btn-header,
 .btn-primary,
-.btn-secondary {
+.btn-secondary,
+.rsvp-resença {
     display: inline-block;
     padding: 12px 12px;
     border-radius: 50px;
@@ -73,6 +74,11 @@ nav a:hover {
 .btn-header,
 .btn-primary {
     background: #b8865b;
+    color: white;
+}
+
+.rsvp-resença {
+    background: #25D366;
     color: white;
 }
 
@@ -478,7 +484,88 @@ section {
 .testimonial-card h3 {
     color: #d6a77b;
 }
+.rsvp {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
 
+.rsvp-container {
+    max-width: 750px; /* Aumentado um pouco para acomodar as colunas com folga */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Container do formulário estruturado em Grid/Colunas */
+.rsvp-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Divide o espaço em 2 colunas iguais */
+    gap: 15px 20px; /* Espaçamento de 15px entre linhas e 20px entre colunas */
+}
+
+/* Classes utilitárias para controlar o tamanho dos campos */
+.field-full {
+    grid-column: span 2; /* Ocupa as 2 colunas (largura total) */
+}
+
+.field-half {
+    grid-column: span 1; /* Ocupa apenas 1 coluna (metade da largura) */
+}
+
+/* Estilização dos rótulos (Labels) */
+.rsvp-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.rsvp-field label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+/* Padronização de todos os inputs do RSVP */
+.rsvp-container input[type="text"],
+.rsvp-container input[type="tel"],
+.rsvp-container input[type="number"],
+.rsvp-container select,
+.rsvp-container textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    box-sizing: border-box; /* Garante que o padding não mude o tamanho final */
+    transition: border-color 0.3s;
+}
+
+.rsvp-container input:focus,
+.rsvp-container select:focus,
+.rsvp-container textarea:focus {
+    border-color: #b19470;
+}
+
+.rsvp-container textarea {
+    height: 80px; /* Altura reduzida para economizar espaço vertical */
+    resize: none;
+}
+
+/* RESPONSIVIDADE: No celular, tudo volta a ter 1 coluna só */
+@media (max-width: 600px) {
+    .rsvp-form-grid {
+        grid-template-columns: 1fr;
+    }
+    .field-full, .field-half {
+        grid-column: span 1;
+    }
+    .rsvp {
+        padding: 40px 0;
+    }
+}
 .contact-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -788,5 +875,214 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 10px;
+    }
+}
+/* ==========================================================================
+   SUPORTE PARA IPAD / TABLETS (Telas até 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .menu {
+        display: none !important;
+    }
+
+    section {
+        padding: 80px 5% !important;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem !important;
+    }
+    .section-title h2 {
+        font-size: 2.5rem !important;
+    }
+    .tag {
+        font-size: 38px !important;
+        margin-top: 40px !important;
+    }
+
+    .hero-content {
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 20px !important;
+        padding: 40px 20px 0 20px !important;
+    }
+
+    .foto-perfil,
+    .logo-barcelos {
+        width: 180px !important;
+        height: 180px !important;
+        margin: 0 !important; 
+        position: relative !important;
+        top: 0 !important;
+    }
+
+    .hero-text {
+        padding: 0 15px !important;
+    }
+
+    .about-container,
+    .contact-container {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    .about-image img {
+        max-height: 400px;
+        object-fit: cover;
+    }
+
+    .about-cards,
+    .services-container,
+    .testimonials-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 15px !important;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Ajuste específico para iPad em modo Vertical (Portrait) */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding-top: 50px !important;
+    }
+
+    .foto-perfil {
+        order: 1 !important;
+        margin: 0 auto 20px auto !important;
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    .hero-text {
+        order: 2 !important;
+    }
+
+    .logo-barcelos {
+        order: 3 !important;
+        margin: 25px auto 0 auto !important;
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    .tag {
+        font-size: 28px !important;
+        margin-top: 15px !important;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem !important;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ==========================================================================
+   SUPORTE PARA SMARTPHONES (Telas até 600px)
+   ========================================================================== */
+@media (max-width: 600px) {
+    section {
+        padding: 50px 20px !important;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .about-cards,
+    .services-container,
+    .testimonials-container,
+    .portfolio-grid,
+    .footer-content,
+    .rsvp-form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .field-full, .field-half {
+        grid-column: span 1 !important;
+    }
+
+    .hero-buttons {
+        flex-direction: column !important;
+        width: 100%;
+    }
+
+    .hero-buttons a,
+    .btn-primary,
+    .btn-secondary {
+        width: 100% !important;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   OTIMIZAÇÃO EXTRA PARA TELAS ULTRA-PEQUENAS (Até 410px)
+   ========================================================================== */
+@media (max-width: 410px) {
+    /* Diminui o recuo lateral para o conteúdo ganhar mais espaço útil */
+    section {
+        padding: 40px 15px !important;
+    }
+
+    /* Evita que o título principal quebre de forma bizarra */
+    .hero h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Ajusta a tag flutuante do topo */
+    .tag {
+        font-size: 20px !important;
+        padding: 4px 12px !important;
+    }
+
+    /* Reduz levemente as imagens do topo para não empurrarem o texto para baixo demais */
+    .foto-perfil {
+        width: 130px !important;
+        height: 130px !important;
+    }
+
+    .logo-barcelos {
+        width: 100px !important;
+        height: 100px !important;
+        margin-top: 15px !important;
+    }
+
+    /* Ajusta os títulos das seções */
+    .section-title h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Suaviza as margens internas dos formulários (RSVP e Contato) */
+    .contact-form input,
+    .contact-form textarea,
+    .rsvp-container input,
+    .rsvp-container select,
+    .rsvp-container textarea {
+        padding: 12px !important;
+        font-size: 13px !important;
+    }
+
+    /* Ajusta o espaçamento dos botões principais */
+    .btn-primary,
+    .btn-secondary,
+    .rsvp-resença {
+        padding: 10px 15px !important;
+        font-size: 16px !important;
     }
 }
