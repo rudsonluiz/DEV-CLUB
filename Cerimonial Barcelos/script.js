@@ -8,7 +8,7 @@ const portfolioItems = document.querySelectorAll(".portfolio-item");
 
 // Adiciona o evento de clique em CADA uma das imagens do portfólio
 portfolioItems.forEach(item => {
-    item.addEventListener("click", function() {
+    item.addEventListener("click", function () {
         modal.style.display = "flex"; // Mostra o modal centralizado
         modalImg.src = this.src;      // Copia o caminho da imagem clicada para o modal
         modalImg.alt = this.alt;      // Copia o texto alternativo por acessibilidade
@@ -70,3 +70,34 @@ form.addEventListener("submit", async (e) => {
         resultado.className = "error";
     }
 });
+
+const LINK_DA_PLANILHA_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUQejxvNcrwjuTEWW2x5AsgS4gndRzS8kX_NSw-J_mqgCWMe0CqdqnKSm0u6dSX8N8fcsXi607HwJx/pub?output=csv";
+
+async function carregarEventos() {
+    const select = document.getElementById('select-eventos');
+    try {
+        const response = await fetch(LINK_DA_PLANILHA_CSV);
+        const data = await response.text();
+
+        // Transforma as linhas da planilha em uma lista
+        const linhas = data.split('\n').map(linha => linha.trim()).filter(linha => linha !== "");
+
+        // Limpa o "Carregando..."
+        select.innerHTML = '<option value="" disabled selected>Selecione o Evento / Casamento</option>';
+
+        // Pula a primeira linha (Título "Eventos") e adiciona os casamentos
+        for (let i = 1; i < linhas.length; i++) {
+            let nomeEvento = linhas[i].replace(/"/g, ""); // Remove aspas se houver
+            let opt = document.createElement('option');
+            opt.value = nomeEvento;
+            opt.innerHTML = nomeEvento;
+            select.appendChild(opt);
+        }
+    } catch (error) {
+        console.error("Erro ao carregar eventos:", error);
+        select.innerHTML = '<option value="" disabled selected>Erro ao carregar eventos. Contate o suporte.</option>';
+    }
+}
+
+// Executa a função assim que a página abre
+document.addEventListener("DOMContentLoaded", carregarEventos);
