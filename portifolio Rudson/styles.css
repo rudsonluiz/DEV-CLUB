@@ -23,7 +23,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 
 }
 
@@ -343,6 +343,12 @@ html {
     box-shadow: 0 0 20px;
     height: 80%;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: center;    
+    gap: 20px;
+    
+
 }
 
 
@@ -398,6 +404,20 @@ html {
     /* Verde um pouco mais escuro no hover */
     transform: scale(1.2);
     /* Um leve efeito de crescer sem distorcer */
+}
+
+.contato-container a.curriculo-contato {
+    background: #075518;
+    color: #ffffff !important;
+    /* Força o texto a ser branco no fundo verde escuro */
+    box-shadow: 0 4px 10px rgba(7, 85, 24, 0.3);
+    /* Sombra suave verde */
+}
+
+.contato-container a.curriculo-contato:hover {
+    background-color: #0a7d2e;
+    /* Verde mais claro no hover */
+    transform: scale(1.2);
 }
 
 /* ========================================================
