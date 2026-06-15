@@ -19,11 +19,11 @@ html {
     width: 100%;
     z-index: 70;
     padding: 1.1rem;
-    font-size: 25px;
+    font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Reduzido levemente para caber melhor */
+    
 
 }
 
@@ -122,7 +122,9 @@ html {
     scroll-snap-align: start;
     /* Alinha o topo da seção com o topo da tela ao scrollar/clicar */
     scroll-margin-top: 40px;
-    
+    margin-top: -70px;
+
+
 }
 
 .home {
@@ -146,10 +148,14 @@ html {
     box-shadow: 0px 0px 20px rgba(79, 70, 229, 0.4);
     border-radius: 60%;
     margin-top: 170px;
-    
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+}
 
-
-
+.foto-perfil:hover {
+    transform: scale(1.3);
+    box-shadow: 0px 0px 30px rgba(79, 70, 229, 0.6);
 }
 
 .home h1 {
@@ -243,12 +249,19 @@ html {
     padding: 15px;
     color: #38bdf8;
     text-decoration: none;
+    margin-top: -30px;
 }
 
 .projeto-descricao {
     padding: 0 15px 20px;
     text-decoration: none;
 
+}
+
+.projetos-container a {
+    text-decoration: none;
+    color: inherit;
+    /* Faz com que o link herde a cor que você definiu na classe */
 }
 
 
@@ -329,6 +342,7 @@ html {
     border-radius: 16px;
     box-shadow: 0 0 20px;
     height: 80%;
+    width: 100%;
 }
 
 
@@ -342,7 +356,7 @@ html {
     font-weight: bold;
     font-size: 22px;
     border-radius: 30px;
-    padding: 25px 30px;
+    padding: 20px 60px;
     vertical-align: middle;
 
 }
@@ -371,7 +385,7 @@ html {
     /* Cor oficial do WhatsApp */
     color: #ffffff;
     /* Texto branco para dar leitura */
-    padding: 25px 30px;
+    padding: 20px 60px;
     /* Cria o formato de botão */
     border-radius: 30px;
     /* Bordas arredondadas */
@@ -390,20 +404,28 @@ html {
    1. OTIMIZAÇÃO PARA IPADS / TABLETS (Até 1024px)
    ======================================================== */
 @media (max-width: 1024px) {
+
     /* Remove o menu superior para telas touch médias */
     .navegacao {
         display: none !important;
     }
 
     /* Recua o espaço do topo já que o menu sumiu */
-    .home-container, .sobre-container, .container, .experiencia, .projetos, .contato {
+    .home-container,
+    .sobre-container,
+    .container,
+    .experiencia,
+    .projetos,
+    .contato {
         padding: 60px 20px 40px 20px;
-        min-height: auto; /* Evita espaçamentos vazios gigantescos no iPad */
+        min-height: auto;
+        /* Evita espaçamentos vazios gigantescos no iPad */
     }
 
     /* Ativa o botão de currículo na seção de contato */
     .contato-container a.curriculo-contato {
-        display: inline-block !important; /* Lado a lado se couber no tablet */
+        display: inline-block !important;
+        /* Lado a lado se couber no tablet */
         background-color: #075518;
         color: #ffffff;
     }
@@ -413,7 +435,8 @@ html {
     }
 
     .foto-perfil {
-        max-width: 280px; /* Tamanho equilibrado para telas médias */
+        max-width: 280px;
+        /* Tamanho equilibrado para telas médias */
     }
 
     .home h1 {
@@ -431,12 +454,19 @@ html {
    2. OTIMIZAÇÃO PARA CELULARES (Até 768px)
    ======================================================== */
 @media (max-width: 768px) {
-    .home-container, .sobre-container, .container, .experiencia, .projetos, .contato {
+
+    .home-container,
+    .sobre-container,
+    .container,
+    .experiencia,
+    .projetos,
+    .contato {
         padding: 40px 15px 30px 15px;
     }
 
     .container {
-        grid-template-columns: 1fr; /* Coluna única para celular */
+        grid-template-columns: 1fr;
+        /* Coluna única para celular */
     }
 
     .home h1 {
@@ -444,8 +474,9 @@ html {
     }
 
     .foto-perfil {
-        max-width: 220px;
-        margin-top: 15px;
+        max-width: 320px;
+        max-height: 400px;
+        margin-top: 55px;
     }
 
     .profissao {
@@ -462,7 +493,7 @@ html {
     }
 
     /* No celular, força os botões de contato a empilharem (um por linha) */
-    .contato-container a, 
+    .contato-container a,
     .contato-container a.curriculo-contato,
     .contato-container a.whatsapp {
         display: block !important;
