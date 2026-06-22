@@ -101,3 +101,24 @@ async function carregarEventos() {
 
 // Executa a função assim que a página abre
 document.addEventListener("DOMContentLoaded", carregarEventos);
+
+const botoesRsvp = document.querySelectorAll(".abrir-rsvp");
+const modalRsvp = document.getElementById("rsvp-modal");
+const fecharRsvp = document.querySelector(".fechar-rsvp");
+
+botoesRsvp.forEach(botao => {
+    botao.addEventListener("click", (e) => {
+        e.preventDefault();
+        modalRsvp.style.display = "flex";
+    });
+});
+
+fecharRsvp.addEventListener("click", () => {
+    modalRsvp.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === modalRsvp) {
+        modalRsvp.style.display = "none";
+    }
+});
