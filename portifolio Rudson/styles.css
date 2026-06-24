@@ -1,8 +1,59 @@
 * {
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #ffffff;
+}
+
+/* ========================================================
+   ESTILOS DAS ESTRELAS CAINDO (ADICIONE AQUI)
+   ======================================================== */
+.star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    /* Fica no fundo, mas acima do background do HTML */
+    pointer-events: none;
+    /* Garante que você consiga clicar nos botões normalmente */
+    background: transparent
+}
+
+.star {
+    position: absolute;
+    top: -50px;
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #38bdf8);
+    /* Usa o azul do seu tema */
+    opacity: 0;
+    transform: rotate(-25deg);
+    animation: fall linear infinite;
+    z-index: -1; /* Força cada estrela para trás dentro do container */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(-25deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(-200px) rotate(-25deg);
+        opacity: 0;
+    }
 }
 
 html {
@@ -57,8 +108,6 @@ html {
     /* Garante que ocupe toda a largura */
     box-sizing: border-box;
 }
-
-
 
 .curriculo {
     background-color: #075518;
@@ -147,7 +196,7 @@ html {
     height: 470px;
     box-shadow: 0px 0px 20px rgba(79, 70, 229, 0.4);
     border-radius: 60%;
-    margin-top: 170px;
+    margin-top: 170px;    
     overflow: hidden;
     transition: 0.5s;
     cursor: pointer;
@@ -160,6 +209,9 @@ html {
 
 .home h1 {
     font-size: 3rem;
+    margin-top: 20px;
+    color: #38bdf8;
+    font-family: monospace;
 }
 
 .profissao {
@@ -344,10 +396,10 @@ html {
     height: 80%;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;    
-    justify-content: center;    
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-    
+
 
 }
 
