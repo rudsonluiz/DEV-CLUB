@@ -71,7 +71,7 @@
 
     100% {
         opacity: 1;
-        transform: translateY(0);
+      
         /* Termina na posição original */
     }
 }
@@ -282,7 +282,7 @@ html {
     font-size: 2.5rem;
     color: #38bdf8;
     text-decoration: none;
-    margin: 0 auto 20px auto;
+    margin: -80px auto 20px auto;
     scroll-margin-top: 200px;
     animation: fadeInUp 1.2s ease-out forwards;
 
