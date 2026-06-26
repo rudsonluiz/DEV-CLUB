@@ -238,6 +238,7 @@ html {
     transition: 0.5s;
     cursor: pointer;
     animation: fadeInUp 1.2s ease-out forwards;
+    
 }
 
 .foto-perfil:hover {
