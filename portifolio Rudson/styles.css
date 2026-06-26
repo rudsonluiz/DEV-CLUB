@@ -71,7 +71,7 @@
 
     100% {
         opacity: 1;
-      
+
         /* Termina na posição original */
     }
 }
@@ -238,7 +238,7 @@ html {
     transition: 0.5s;
     cursor: pointer;
     animation: fadeInUp 1.2s ease-out forwards;
-    
+
 }
 
 .foto-perfil:hover {
@@ -570,63 +570,204 @@ html {
 /* ========================================================
    2. OTIMIZAÇÃO PARA CELULARES (Até 768px)
    ======================================================== */
-@media (max-width:768px){
+@media (max-width:768px) {
 
-.navegacao{
-    display:none;
+    .navegacao {
+        display: none;
+    }
+
+    .home-container {
+        margin-top: 0;
+        padding: 30px 15px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .projetos-container {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-perfil {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        margin-top: 60px;
+    }
+
+    .home h1 {
+        font-size: 2rem;
+    }
+
+    .profissao {
+        font-size: 1rem;
+    }
+
+    .sub-titulo {
+        font-size: 1.8rem;
+    }
+
+    .texto-container {
+        width: 100%;
+        padding: 20px;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .contato-container a {
+        width: 100%;
+        max-width: 280px;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .curriculo {
+        display: none;
+    }
+
 }
 
-.home-container{
-    margin-top:0;
-    padding:30px 15px;
+/* ==========================
+   CELULAR (768px)
+========================== */
+@media screen and (max-width:768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    * {
+        max-width: 100%;
+    }
+
+    /* Remove menu */
+    .navegacao {
+        display: none;
+    }
+
+    /* Todas as seções */
+    .home-container,
+    .sobre-container,
+    .container,
+    .experiencia,
+    .projetos,
+    .contato {
+        width: 100%;
+        min-height: auto;
+        padding: 40px 20px;
+        margin: 0;
+    }
+
+    /* HOME */
+
+    .home {
+        margin-top: 40px;
+    }
+
+    .home-container {
+        margin-top: 0;
+    }
+
+    .foto-perfil {
+        width: 220px;
+        height: 220px;
+        margin: 40px auto 20px;
+    }
+
+    .home h1 {
+        font-size: 2rem;
+    }
+
+    .profissao {
+        font-size: 1rem;
+    }
+
+    /* SOBRE */
+
+    .sub-titulo {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+
+    .texto-container {
+        width: 100%;
+        padding: 20px;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    /* HABILIDADES */
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .habilidades,
+    .formacao {
+        min-width: 100%;
+    }
+
+    .skills,
+    .formacao ul {
+        gap: 10px;
+    }
+
+    .skills span,
+    .formacao li {
+        font-size: 15px;
+        padding: 12px 16px;
+    }
+
+    /* PROJETOS */
+
+    .projetos-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .projetos-card {
+        width: 100%;
+    }
+
+    .projeto-imagem {
+        height: 200px;
+    }
+
+    .projeto-titulo {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    /* CONTATO */
+
+    .contato-container {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contato-container a {
+        width: 100%;
+        max-width: 300px;
+        margin: 8px 0;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    /* Botão currículo do topo */
+
+    .curriculo {
+        display: none;
+    }
 }
 
-.container{
-    grid-template-columns:1fr;
-}
-
-.projetos-container{
-    grid-template-columns:1fr;
-}
-
-.foto-perfil{
-    width:100%;
-    max-width:260px;
-    height:auto;
-    margin-top:60px;
-}
-
-.home h1{
-    font-size:2rem;
-}
-
-.profissao{
-    font-size:1rem;
-}
-
-.sub-titulo{
-    font-size:1.8rem;
-}
-
-.texto-container{
-    width:100%;
-    padding:20px;
-    font-size:16px;
-    line-height:1.8;
-}
-
-.contato-container a{
-    width:100%;
-    max-width:280px;
-    margin:10px auto;
-    padding:15px;
-}
-
-.curriculo{
-    display:none;
-}
-
-}
 /* ========================================================
    CELULARES PEQUENOS (ATÉ 480px)
    Xiaomi Redmi 13C, Galaxy A, Moto G, etc.
